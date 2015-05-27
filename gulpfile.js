@@ -148,12 +148,12 @@ gulp.task('html', function () {
     // Minify any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output files
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('_dist'))
     .pipe($.size({title: 'html'}));
 });
 
 // Clean output directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+gulp.task('clean', del.bind(null, ['.tmp', '_dist/*', '!_dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], function () {
@@ -183,8 +183,8 @@ gulp.task('serve:dist', ['default'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'dist',
-    baseDir: 'dist'
+    server: '_dist',
+    baseDir: '_dist'
   });
 });
 
@@ -217,7 +217,7 @@ gulp.task('pagespeed', function (cb) {
 // local resources. This should only be done for the 'dist' directory, to allow
 // live reload to work as expected when serving from the 'app' directory.
 gulp.task('generate-service-worker', function (callback) {
-  var rootDir = 'dist';
+  var rootDir = '_dist';
 
   swPrecache({
     // Used to avoid cache conflicts when serving on localhost.

@@ -4,5 +4,5 @@ node_modules
 .sublime-project
 .sublime-workspace
 app.yaml
-dist
+_dist
 *.sublime*
