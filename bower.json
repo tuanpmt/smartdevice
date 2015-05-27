@@ -1,0 +1,32 @@
+{
+  "name": "smartdevice",
+  "version": "0.1",
+  "homepage": "https://github.com/tuanpmt/smartdevice",
+  "authors": [
+    "TuanPM <tuanpm@live.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton": "~2.0.4",
+    "jquery": "~2.1.4"
+  },
+  "overrides": {
+    "react": {
+      "main": [
+        "react.js",
+        "JSXTransformer.js"
+      ]
+    }
+  }
+}
